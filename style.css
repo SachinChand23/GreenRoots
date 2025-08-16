@@ -6,11 +6,14 @@ body {
       color: #333;
     }
     header {
-      background: #2e7d32;
-      color: white;
-      padding: 1rem;
+      background: rgb(149, 246, 144);
+      color: rgb(149, 246, 144);
+      padding: 0;
       position: sticky;
       top: 0;
+      background: rgb(149, 246, 144);
+      text-align: center;
+      padding: 10px 10px;
     }
     header nav {
       display: flex;
@@ -19,7 +22,7 @@ body {
       align-items: center;
     }
     header a {
-      color: white;
+      color: rgb(149, 246, 144);
       text-decoration: none;
       margin: 0 10px;
       font-weight: bold;
@@ -55,7 +58,7 @@ body {
       margin-top: 2rem;
     }
     .stat {
-      background: #e8f5e9;
+      background: hsl(125, 39%, 94%);
       border-radius: 10px;
       padding: 1rem;
       margin: 0.5rem;
@@ -104,4 +107,17 @@ body {
     }
     .heading{
         font: 2em Georgia ;
+  
     }
+    .quote{
+      padding-top:0;
+      margin: 0;
+    }
+    .profile-icon {
+      font-size: 30px;
+      position: static;
+      top: 0px;
+      right: 10px;
+      cursor: pointer;
+    }
+
