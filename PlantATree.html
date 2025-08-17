@@ -6,55 +6,121 @@
   <title>Add a Tree</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f0f8f5;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-    .form-container {
-      background: white;
-      padding: 20px 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-      width: 350px;
-    }
-    .form-container h2 {
-      text-align: center;
-      color: green;
-      margin-bottom: 20px;
-    }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    label {
-      display: block;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    input[type="file"] {
-      border: none;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      background: green;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: darkgreen;
-    }
+  font-family: Arial, sans-serif;
+  background: #f0f8f5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px 20px;
+  background: linear-gradient(to right, #e6f9ec, #f9fff7);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #0b3d0b;
+}
+
+.hero h1 span {
+  color: #228b22;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 15px auto;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.primary-btn, .secondary-btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.primary-btn {
+  background: green;
+  color: white;
+}
+
+.primary-btn:hover {
+  background: darkgreen;
+}
+
+.secondary-btn {
+  background: white;
+  border: 2px solid green;
+  color: green;
+}
+
+.secondary-btn:hover {
+  background: #e6ffe6;
+}
+
+/* Form Section */
+.form-container {
+  background: white;
+  margin: 40px auto;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  width: 400px;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: green;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input[type="file"] {
+  border: none;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: darkgreen;
+}
+
   </style>
 </head>
 <body>
