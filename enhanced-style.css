@@ -97,7 +97,7 @@ body {
   width: 8px;
   height: 30px;
   background: #8B4513;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 4px;
   animation: growTrunk 1s ease-out;
 }
