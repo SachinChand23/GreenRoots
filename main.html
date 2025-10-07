@@ -347,6 +347,216 @@
     </div>
   </section>
 
+  <!-- Individual Planting Modal -->
+  <div class="modal" id="individualPlantModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-seedling"></i> Individual Tree Planting</h3>
+        <button class="modal-close" onclick="closeModal('individualPlantModal')">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="individualPlantForm">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="individualName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Number</label>
+            <input type="tel" id="individualPhone" placeholder="Your phone number" required>
+          </div>
+          <div class="form-group">
+            <label>Tree Species</label>
+            <select id="individualSpecies" required>
+              <option value="">Select species...</option>
+              <option value="Mango">Mango (Native)</option>
+              <option value="Neem">Neem (Native)</option>
+              <option value="Banyan">Banyan (Native)</option>
+              <option value="Peepal">Peepal (Native)</option>
+              <option value="Gulmohar">Gulmohar</option>
+              <option value="Coconut">Coconut Palm</option>
+              <option value="Ashoka">Ashoka Tree</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Preferred Location</label>
+            <select id="individualLocation" required>
+              <option value="">Select location...</option>
+              <option value="south-mumbai">South Mumbai</option>
+              <option value="central-mumbai">Central Mumbai</option>
+              <option value="western-suburbs">Western Suburbs</option>
+              <option value="eastern-suburbs">Eastern Suburbs</option>
+              <option value="navi-mumbai">Navi Mumbai</option>
+              <option value="thane">Thane</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Specific Location (Optional)</label>
+            <input type="text" id="individualSpecificLocation" placeholder="e.g., Near XYZ Park">
+          </div>
+          <div class="form-group">
+            <label>Preferred Planting Date</label>
+            <input type="date" id="individualDate" required>
+          </div>
+          <div class="form-group">
+            <label>Additional Notes (Optional)</label>
+            <textarea id="individualNotes" rows="3" placeholder="Any special requirements or preferences..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large ripple-effect">
+            <i class="fas fa-check"></i>
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Community Drive Modal -->
+  <div class="modal" id="communityDriveModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-users"></i> Community Plantation Drive</h3>
+        <button class="modal-close" onclick="closeModal('communityDriveModal')">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="communityDriveForm">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" id="communityName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" id="communityEmail" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" id="communityPhone" placeholder="Your phone number" required>
+          </div>
+          <div class="form-group">
+            <label>Organization/Group Name (Optional)</label>
+            <input type="text" id="communityOrg" placeholder="Your organization name">
+          </div>
+          <div class="form-group">
+            <label>I Want To</label>
+            <select id="communityAction" required>
+              <option value="">Select option...</option>
+              <option value="join">Join an Existing Drive</option>
+              <option value="organize">Organize a New Drive</option>
+            </select>
+          </div>
+          <div class="form-group" id="communityLocationGroup">
+            <label>Preferred Area</label>
+            <select id="communityLocation" required>
+              <option value="">Select area...</option>
+              <option value="south-mumbai">South Mumbai</option>
+              <option value="central-mumbai">Central Mumbai</option>
+              <option value="western-suburbs">Western Suburbs</option>
+              <option value="eastern-suburbs">Eastern Suburbs</option>
+              <option value="navi-mumbai">Navi Mumbai</option>
+              <option value="thane">Thane</option>
+            </select>
+          </div>
+          <div class="form-group" id="communityGroupSizeGroup" style="display: none;">
+            <label>Expected Group Size</label>
+            <input type="number" id="communityGroupSize" min="5" placeholder="Number of participants">
+          </div>
+          <div class="form-group" id="communityDateGroup" style="display: none;">
+            <label>Preferred Date</label>
+            <input type="date" id="communityDate">
+          </div>
+          <div class="form-group">
+            <label>Message (Optional)</label>
+            <textarea id="communityMessage" rows="3" placeholder="Tell us more about your interest..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large ripple-effect">
+            <i class="fas fa-check"></i>
+            Submit Request
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Corporate Partnership Modal -->
+  <div class="modal" id="corporatePartnershipModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3><i class="fas fa-building"></i> Corporate Partnership Program</h3>
+        <button class="modal-close" onclick="closeModal('corporatePartnershipModal')">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="corporatePartnershipForm">
+          <div class="form-group">
+            <label>Company Name</label>
+            <input type="text" id="corporateName" placeholder="Your company name" required>
+          </div>
+          <div class="form-group">
+            <label>Contact Person</label>
+            <input type="text" id="corporateContact" placeholder="Full name" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="corporateEmail" placeholder="corporate@company.com" required>
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" id="corporatePhone" placeholder="Contact number" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Company Size</label>
+            <select id="corporateSize" required>
+              <option value="">Select size...</option>
+              <option value="small">Small (1-50 employees)</option>
+              <option value="medium">Medium (51-200 employees)</option>
+              <option value="large">Large (201-1000 employees)</option>
+              <option value="enterprise">Enterprise (1000+ employees)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Partnership Interest</label>
+            <select id="corporateInterest" required>
+              <option value="">Select interest...</option>
+              <option value="csr">CSR Initiative</option>
+              <option value="team-building">Team Building Event</option>
+              <option value="sponsorship">Sponsorship Program</option>
+              <option value="long-term">Long-term Partnership</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Expected Number of Trees</label>
+            <input type="number" id="corporateTreeCount" min="50" placeholder="Minimum 50 trees" required>
+          </div>
+          <div class="form-group">
+            <label>Preferred Timeline</label>
+            <select id="corporateTimeline" required>
+              <option value="">Select timeline...</option>
+              <option value="immediate">Within 1 month</option>
+              <option value="short">1-3 months</option>
+              <option value="medium">3-6 months</option>
+              <option value="long">6+ months</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Additional Details</label>
+            <textarea id="corporateDetails" rows="4" placeholder="Tell us about your goals and expectations..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large ripple-effect">
+            <i class="fas fa-paper-plane"></i>
+            Request Partnership
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Events Section -->
   <section id="events" class="events-section" data-aos="fade-up">
     <div class="section-header">
@@ -603,4 +813,5 @@
 
 <script src="enhanced-script.js"></script>
 </body>
+
 </html>
