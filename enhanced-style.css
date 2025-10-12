@@ -1134,7 +1134,7 @@ section {
   justify-content: center;
 }
 
-/* Dark mode support for mission image */
+
 [data-theme="dark"] .mission-image {
   box-shadow: 0 10px 40px rgba(76, 175, 80, 0.4);
 }
@@ -2095,3 +2095,4 @@ input[type="number"]::-webkit-inner-spin-button {
     opacity: 1;
   }
 }
+
