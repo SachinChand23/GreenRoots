@@ -175,42 +175,59 @@
   </section>
 
   <!-- Mission Section -->
-  <section id="mission" class="mission-section" data-aos="fade-up">
-    <div class="section-header">
-      <h2 class="section-title">Our Mission</h2>
-      <div class="section-divider"></div>
+ <section id="mission" class="mission-section" data-aos="fade-up">
+  <div class="section-header">
+    <h2 class="section-title">Our Mission</h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="mission-content">
+    <!-- Mission Image -->
+    <div class="mission-image" data-aos="fade-right">
+      <img src="https://gosharpener.com/content/uploads/photos/2024/09/sngine_6a0de450afa6e478d0838716a89a408d.jpg" alt="Tree Planting Mission" />
+      <div class="image-overlay">
+        <div class="overlay-text">
+          <i class="fas fa-seedling"></i>
+          <p>Growing Together</p>
+        </div>
+      </div>
     </div>
-    <div class="mission-content">
-      <div class="mission-text" data-aos="fade-right">
-        <p class="mission-description">
-          We aim to plant native trees, restore habitats, and empower communities to care for them for years to come.
-        </p>
-        <div class="features-grid">
-          <div class="feature-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>Track planted trees with GPS precision</span>
-          </div>
-          <div class="feature-item">
-            <i class="fas fa-users-cog"></i>
-            <span>Promote community environmental involvement</span>
-          </div>
-          <div class="feature-item">
-            <i class="fas fa-chart-line"></i>
-            <span>Monitor long-term plantation impact</span>
-          </div>
-          <div class="feature-item">
-            <i class="fas fa-mobile-alt"></i>
-            <span>Real-time tree health monitoring</span>
-          </div>
-        </div>
+    
+    <div class="mission-text" data-aos="fade-left">
+      <p class="mission-description">
+        We aim to plant native trees, restore habitats, and empower communities to care for them for years to come.
+      </p>
+        
+ <div class="features-grid">
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-tree"></i>
+    </div>
+    <span>Track planted trees with GPS precision</span>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-seedling"></i>
+    </div>
+    <span>Promote community environmental involvement</span>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-leaf"></i>
+    </div>
+    <span>Monitor long-term plantation impact</span>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-spa"></i>
+    </div>
+    <span>Real-time tree health monitoring</span>
+  </div>
+</div>
       </div>
-      <div class="mission-visual" data-aos="fade-left">
-        <div class="impact-chart">
-          <canvas id="impactChart"></canvas>
-        </div>
-      </div>
+    
     </div>
   </section>
+  
 
   <!-- Mumbai Tree Map Section -->
   <section id="map" class="map-section" data-aos="fade-up">
@@ -313,7 +330,7 @@
     </div>
   </section>
 
-  <!-- Plant Tree Section -->
+ <!-- Plant Tree Section -->
   <section id="plant-tree" class="plant-section" data-aos="fade-up">
     <div class="section-header">
       <h2 class="section-title">Plant a Tree</h2>
@@ -326,7 +343,7 @@
         </div>
         <h3>Individual Planting</h3>
         <p>Plant a single tree and track its growth</p>
-        <button class="btn btn-outline ripple-effect">Choose Location</button>
+        <button class="btn btn-outline ripple-effect" onclick="openModal('individualPlantModal')">Choose Location</button>
       </div>
       <div class="plant-card" data-aos="flip-left" data-aos-delay="200">
         <div class="plant-icon">
@@ -334,7 +351,7 @@
         </div>
         <h3>Community Drive</h3>
         <p>Join or organize community plantation events</p>
-        <button class="btn btn-outline ripple-effect">Join Event</button>
+        <button class="btn btn-outline ripple-effect" onclick="openModal('communityDriveModal')">Join Event</button>
       </div>
       <div class="plant-card" data-aos="flip-left" data-aos-delay="300">
         <div class="plant-icon">
@@ -342,7 +359,7 @@
         </div>
         <h3>Corporate Partnership</h3>
         <p>Partner with us for large-scale initiatives</p>
-        <button class="btn btn-outline ripple-effect">Learn More</button>
+        <button class="btn btn-outline ripple-effect" onclick="openModal('corporatePartnershipModal')">Learn More</button>
       </div>
     </div>
   </section>
@@ -811,7 +828,7 @@
   <i class="fas fa-chevron-up"></i>
 </div>
 
+
 <script src="enhanced-script.js"></script>
 </body>
-
 </html>
