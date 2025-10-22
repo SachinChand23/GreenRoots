@@ -716,7 +716,11 @@ function initializeEventListeners() {
     if (pledgeForm) {
         pledgeForm.addEventListener('submit', handlePledgeSubmission);
     }
-    
+    // Event registration form submission
+const eventRegistrationForm = document.getElementById('eventRegistrationForm');
+if (eventRegistrationForm) {
+  eventRegistrationForm.addEventListener('submit', handleEventRegistration);
+}
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
@@ -1656,5 +1660,92 @@ window.GreenRoots = {
     triggerCelebration
 };
 
+// =====================================================================
+// EVENT REGISTRATION FUNCTIONALITY
+// =====================================================================
+
+const eventDetails = {
+  'mumbai-monsoon': {
+    title: 'Mumbai Monsoon Plantation',
+    date: '15th November 2024',
+    location: 'Sanjay Gandhi National Park',
+    time: '7:00 AM - 12:00 PM'
+  },
+  'corporate-green': {
+    title: 'Corporate Green Initiative',
+    date: '22nd November 2024',
+    location: 'BKC Business District',
+    time: '8:00 AM - 1:00 PM'
+  }
+};
+
+function openEventRegistration(eventId) {
+  const event = eventDetails[eventId];
+  if (!event) return;
+  
+  // Set event details
+  document.getElementById('eventTitle').textContent = event.title;
+  document.getElementById('eventId').value = eventId;
+  
+  // Create info banner
+  const banner = document.getElementById('eventInfoBanner');
+  banner.innerHTML = `
+    <strong>${event.title}</strong>
+    <div style="margin-top: 0.5rem; display: grid; gap: 0.25rem;">
+      <span><i class="fas fa-calendar"></i> ${event.date}</span>
+      <span><i class="fas fa-map-marker-alt"></i> ${event.location}</span>
+      <span><i class="fas fa-clock"></i> ${event.time}</span>
+    </div>
+  `;
+  
+  openModal('eventRegistrationModal');
+}
+
+// Add event registration form handler to initialization
+const eventRegistrationForm = document.getElementById('eventRegistrationForm');
+if (eventRegistrationForm) {
+  eventRegistrationForm.addEventListener('submit', handleEventRegistration);
+}
+
+function handleEventRegistration(e) {
+  e.preventDefault();
+  
+  const formData = {
+    eventId: document.getElementById('eventId').value,
+    name: document.getElementById('eventName').value,
+    email: document.getElementById('eventEmail').value,
+    phone: document.getElementById('eventPhone').value,
+    age: document.getElementById('eventAge').value,
+    participants: document.getElementById('eventParticipants').value,
+    tshirt: document.getElementById('eventTshirt').value,
+    source: document.getElementById('eventSource').value,
+    message: document.getElementById('eventMessage').value,
+    termsAccepted: document.getElementById('eventTerms').checked
+  };
+  
+  const event = eventDetails[formData.eventId];
+  
+  if (!formData.termsAccepted) {
+    showNotification('⚠️ Please accept the terms and conditions', 'warning');
+    return;
+  }
+  
+  showLoadingState(e.target);
+  
+  setTimeout(() => {
+    console.log('Event Registration:', formData);
+    showNotification(
+      `🎉 Success! ${formData.name}, you're registered for ${event.title}! Check your email for confirmation and event details.`,
+      'success'
+    );
+    
+    e.target.reset();
+    hideLoadingState(e.target);
+    closeModal('eventRegistrationModal');
+    triggerCelebration();
+  }, 2000);
+}
+
+// Update the existing initializeEventListeners function to include this
 
 console.log('🌱 GreenRoots Enhanced JavaScript Loaded Successfully!');
