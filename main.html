@@ -182,22 +182,18 @@
   </div>
   <div class="mission-content">
     <!-- Mission Image -->
-    <div class="mission-image" data-aos="fade-right">
-      <img src="https://gosharpener.com/content/uploads/photos/2024/09/sngine_6a0de450afa6e478d0838716a89a408d.jpg" alt="Tree Planting Mission" />
-      <div class="image-overlay">
-        <div class="overlay-text">
-          <i class="fas fa-seedling"></i>
-          <p>Growing Together</p>
-        </div>
-      </div>
+ <div class="mission-image" data-aos="fade-right">
+  <img src="https://www.ugaoo.com/cdn/shop/articles/shutterstock_417312760.jpg?v=1661869375" alt="Tree Planting Mission" />
+  <div class="image-overlay">
+    <div class="overlay-text">
+      <i class="fas fa-seedling"></i>
+      <p>Growing Together</p>
     </div>
+  </div>
+</div>
     
-    <div class="mission-text" data-aos="fade-left">
-      <p class="mission-description">
-        We aim to plant native trees, restore habitats, and empower communities to care for them for years to come.
-      </p>
-        
- <div class="features-grid">
+
+   <div class="features-grid">
   <div class="feature-item">
     <div class="feature-icon-circle">
       <i class="fas fa-tree"></i>
@@ -222,10 +218,31 @@
     </div>
     <span>Real-time tree health monitoring</span>
   </div>
-</div>
-      </div>
-    
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-users"></i>
     </div>
+    <span>Engage local communities in conservation</span>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-graduation-cap"></i>
+    </div>
+    <span>Educate youth about environmental sustainability</span>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-tree"></i>
+    </div>
+    <span>Prioritize native species for ecological balance</span>
+  </div>
+  <div class="feature-item">
+    <div class="feature-icon-circle">
+      <i class="fas fa-recycle"></i>
+    </div>
+    <span>Promote ecosystem biodiversity and restoration</span>
+  </div>
+</div>
   </section>
   
 
@@ -602,8 +619,9 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-small btn-primary">Register</button>
-      </div>
+<button class="btn btn-small btn-primary ripple-effect" onclick="openEventRegistration('mumbai-monsoon')">
+  <i class="fas fa-user-plus"></i> Register Now
+</button>      </div>
       
       <div class="event-card" data-aos="fade-up" data-aos-delay="200">
         <div class="event-date">
@@ -625,8 +643,102 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-small btn-primary">Register</button>
+        
+<button class="btn btn-small btn-primary ripple-effect" onclick="openEventRegistration('corporate-green')">
+  <i class="fas fa-user-plus"></i> Register Now
+</button>
       </div>
+    <!-- Event Registration Modal -->
+<div class="modal" id="eventRegistrationModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3><i class="fas fa-calendar-check"></i> <span id="eventTitle">Event Registration</span></h3>
+      <button class="modal-close" onclick="closeModal('eventRegistrationModal')">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="event-info-banner" id="eventInfoBanner"></div>
+      <form id="eventRegistrationForm">
+        <input type="hidden" id="eventId" name="eventId">
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name *</label>
+            <input type="text" id="eventName" placeholder="Enter your name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address *</label>
+            <input type="email" id="eventEmail" placeholder="your@email.com" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label>Phone Number *</label>
+            <input type="tel" id="eventPhone" placeholder="+91 98765 43210" required>
+          </div>
+          <div class="form-group">
+            <label>Age</label>
+            <input type="number" id="eventAge" min="10" max="100" placeholder="Your age">
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label>Number of Participants</label>
+          <select id="eventParticipants" required>
+            <option value="">Select participants...</option>
+            <option value="1">Just me (1 person)</option>
+            <option value="2">2 people</option>
+            <option value="3-5">3-5 people</option>
+            <option value="6-10">6-10 people</option>
+            <option value="10+">More than 10 people</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>T-Shirt Size (Optional)</label>
+          <select id="eventTshirt">
+            <option value="">Select size...</option>
+            <option value="S">Small (S)</option>
+            <option value="M">Medium (M)</option>
+            <option value="L">Large (L)</option>
+            <option value="XL">Extra Large (XL)</option>
+            <option value="XXL">2XL</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>How did you hear about this event?</label>
+          <select id="eventSource">
+            <option value="">Select option...</option>
+            <option value="website">Website</option>
+            <option value="social-media">Social Media</option>
+            <option value="friend">Friend/Family</option>
+            <option value="email">Email Newsletter</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Special Requirements / Message (Optional)</label>
+          <textarea id="eventMessage" rows="3" placeholder="Any dietary restrictions, accessibility needs, or questions..."></textarea>
+        </div>
+        
+        <div class="form-group checkbox-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="eventTerms" required>
+            <span>I agree to the terms and conditions and understand the event guidelines *</span>
+          </label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-large ripple-effect">
+          <i class="fas fa-check-circle"></i> Confirm Registration
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
