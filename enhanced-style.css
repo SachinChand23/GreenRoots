@@ -25,6 +25,7 @@
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 /* Dark Theme Variables */
 [data-theme="dark"] {
   --text-primary: #e0e0e0;
@@ -75,16 +76,208 @@ body {
   z-index: 10000;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-
-.loading-screen.hidden {
-  opacity: 0;
-  visibility: hidden;
+/* Dark Mode Text Enhancements */
+[data-theme="dark"] {
+  --primary-color: #4caf50;
+  --primary-dark: #388e3c;
+  --primary-light: #66bb6a;
+  --secondary-color: #ffb74d;
+  --secondary-dark: #ffa726;
+  --text-primary: #ffffff;
+  --text-secondary: #e0e0e0;
+  --text-light: #b0b0b0;
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-tertiary: #2a2a2a;
+  --border-color: rgba(76, 175, 80, 0.3);
+  --shadow-light: 0 2px 8px rgba(76, 175, 80, 0.2);
+  --shadow-medium: 0 4px 20px rgba(76, 175, 80, 0.3);
+  --shadow-heavy: 0 8px 30px rgba(76, 175, 80, 0.4);
+  --gradient-bg: linear-gradient(180deg, #0a1f0a, #1a1a1a);
+  --gradient-primary: linear-gradient(135deg, #2e7d32, #4caf50);
+  --gradient-secondary: linear-gradient(135deg, #ff9800, #ffb74d);
 }
 
-.loading-content {
-  text-align: center;
+/* Dark mode body background */
+[data-theme="dark"] body {
+  background: var(--gradient-bg);
+  color: var(--text-primary);
+}
+
+/* Dark mode header */
+[data-theme="dark"] .header {
+  background: rgba(18, 18, 18, 0.95);
+  border-bottom: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+/* Dark mode navigation links */
+[data-theme="dark"] .nav-link {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .nav-link:hover {
   color: white;
 }
+
+/* Dark mode sections */
+[data-theme="dark"] .mission-section,
+[data-theme="dark"] .stats-section,
+[data-theme="dark"] .plant-section,
+[data-theme="dark"] .events-section,
+[data-theme="dark"] .pledge-section,
+[data-theme="dark"] .contact-section {
+  background: var(--bg-primary);
+}
+
+/* Dark mode mission text */
+[data-theme="dark"] .mission-description {
+  color: var(--text-primary);
+}
+
+/* Dark mode feature items */
+[data-theme="dark"] .feature-item {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+[data-theme="dark"] .feature-item:hover {
+  background: var(--bg-tertiary);
+  box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+[data-theme="dark"] .feature-item span {
+  color: var(--text-primary);
+}
+
+/* Dark mode cards */
+[data-theme="dark"] .stat-card,
+[data-theme="dark"] .plant-card,
+[data-theme="dark"] .event-card,
+[data-theme="dark"] .contact-item {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .stat-card:hover,
+[data-theme="dark"] .plant-card:hover,
+[data-theme="dark"] .event-card:hover {
+  background: var(--bg-tertiary);
+}
+
+/* Dark mode text elements */
+[data-theme="dark"] .section-title {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .section-description,
+[data-theme="dark"] .hero-description,
+[data-theme="dark"] .stat-label,
+[data-theme="dark"] .event-description {
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] h1, 
+[data-theme="dark"] h2, 
+[data-theme="dark"] h3, 
+[data-theme="dark"] h4, 
+[data-theme="dark"] h5, 
+[data-theme="dark"] h6 {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] p {
+  color: var(--text-secondary);
+}
+
+/* Dark mode modal */
+[data-theme="dark"] .modal-content {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(76, 175, 80, 0.3);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-header {
+  border-bottom-color: rgba(76, 175, 80, 0.3);
+}
+
+/* Dark mode forms */
+[data-theme="dark"] .form-group label {
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group select,
+[data-theme="dark"] .form-group textarea {
+  background: var(--bg-tertiary);
+  border-color: rgba(76, 175, 80, 0.3);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .form-group input::placeholder,
+[data-theme="dark"] .form-group textarea::placeholder {
+  color: var(--text-light);
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group select:focus,
+[data-theme="dark"] .form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Dark mode feature icon circles */
+[data-theme="dark"] .feature-icon-circle {
+  background: linear-gradient(135deg, #2e7d32, #4caf50);
+  box-shadow: 0 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+/* Dark mode contact details */
+[data-theme="dark"] .contact-details h4 {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .contact-details p {
+  color: var(--text-secondary);
+}
+
+/* Dark mode event content */
+[data-theme="dark"] .event-content h3 {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .event-location {
+  color: var(--text-secondary);
+}
+
+/* Dark mode pledge visual */
+[data-theme="dark"] .pledge-visual {
+  background: var(--bg-secondary);
+  border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+[data-theme="dark"] .pledge-impact h3 {
+  color: var(--primary-light);
+}
+
+[data-theme="dark"] .metric-label {
+  color: var(--text-secondary);
+}
+
+/* Dark mode stats */
+[data-theme="dark"] .stat-number {
+  color: var(--primary-light);
+}
+
+/* Dark mode footer */
+[data-theme="dark"] .footer {
+  background: #0a1f0a;
+}
+
+[data-theme="dark"] .footer-section h4 {
+  color: var(--primary-light);
+}
+/* Loading Screen (FINAL, CLEANED CSS) */
 
 .tree-animation {
   position: relative;
@@ -95,11 +288,14 @@ body {
 
 .trunk {
   width: 8px;
-  height: 30px;
+  height: 60px;
   background: #8B4513;
-  margin: auto;
   border-radius: 4px;
   animation: growTrunk 1s ease-out;
+  position: absolute;
+  bottom: 0; /* Changed from top to bottom */
+  left: 50%;
+  margin-left: -4px;
 }
 
 .leaves {
@@ -107,8 +303,11 @@ body {
   height: 50px;
   background: #32CD32;
   border-radius: 50%;
-  margin: -10px auto 0;
   animation: growLeaves 1s ease-out 0.5s both;
+  position: absolute;
+  top: 0; /* Changed from 15px to 0 */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @keyframes growTrunk {
@@ -117,15 +316,29 @@ body {
 }
 
 @keyframes growLeaves {
-  from { 
-    transform: scale(0); 
-    opacity: 0; 
+  from {
+    transform: scale(0) translateX(-50%);
+    opacity: 0;
   }
-  to { 
-    transform: scale(1); 
-    opacity: 1; 
+  to {
+    transform: scale(1) translateX(-50%);
+    opacity: 1;
   }
 }
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-content {
+  text-align: center;
+  color: white;
+}
+/* Loading Screen (FIXED TREE ANIMATION) */
+
+/* ... (previous styles) ... */
+/* Loading Screen (FIXED TREE CONNECTION) */
+
 
 .loading-bar {
   width: 200px;
@@ -484,7 +697,7 @@ body {
 
 .tree-crown {
   position: absolute;
-  top: 20px;
+  bottom: 80px; /* move crown so it sits right above the trunk */
   left: 50%;
   transform: translateX(-50%);
   width: 160px;
@@ -493,6 +706,7 @@ body {
   border-radius: 50%;
   animation: growCrown 2s ease-out 0.5s both;
 }
+
 
 @keyframes growUp {
   from { height: 0; }
@@ -742,16 +956,30 @@ section {
 }
 
 /* Mission Section */
+
 .mission-section {
   padding: 4rem 0;
+  background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e9 50%, #f1f8f4 100%);
+  position: relative;
+  overflow: hidden;
 }
 
-.mission-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
+/* Add subtle pattern overlay */
+.mission-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(76, 175, 80, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(34, 139, 34, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
 }
+
+
 
 .mission-description {
   font-size: 1.2rem;
@@ -782,9 +1010,33 @@ section {
 }
 
 .feature-item i {
-  color: var(--primary-color);
-  font-size: 1.2rem;
-  width: 20px;
+  color: white;
+  font-size: 1rem;
+}
+
+.feature-icon-circle {
+  width: 45px;
+  height: 45px;
+  min-width: 45px;
+  background: linear-gradient(135deg, #228B22, #4caf50);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 10px rgba(34, 139, 34, 0.3);
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover .feature-icon-circle {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 6px 15px rgba(34, 139, 34, 0.5);
+}
+
+.feature-item span {
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .mission-visual {
@@ -803,6 +1055,141 @@ section {
   justify-content: center;
   box-shadow: var(--shadow-medium);
   position: relative;
+}
+/* Mission Image Styling - COMPLETE FIX */
+.mission-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: stretch; 
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.mission-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(34, 139, 34, 0.3);
+  transition: all 0.4s ease;
+  width: 100%;
+  height: 100%; /* ADDED */
+  min-height: 500px; /* ADDED */
+}
+
+.mission-image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(34, 139, 34, 0.4);
+}
+
+.mission-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.mission-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(34, 139, 34, 0.9), transparent);
+  padding: 2rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.mission-image:hover .image-overlay {
+  opacity: 1;
+}
+
+.overlay-text {
+  text-align: center;
+  color: white;
+}
+
+.overlay-text i {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  display: block;
+  animation: bounce 2s infinite;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  color: white;
+}
+
+.mission-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Dark mode support for mission image */
+[data-theme="dark"] .mission-image {
+  box-shadow: 0 10px 40px rgba(76, 175, 80, 0.4);
+}
+
+[data-theme="dark"] .mission-image:hover {
+  box-shadow: 0 15px 50px rgba(76, 175, 80, 0.5);
+}
+
+[data-theme="dark"] .image-overlay {
+  background: linear-gradient(to top, rgba(46, 125, 50, 0.95), transparent);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .mission-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-content {
+    gap: 2rem;
+  }
+  
+  .image-overlay {
+    padding: 1.5rem;
+  }
+  
+  .overlay-text i {
+    font-size: 2rem;
+  }
+  
+  .overlay-text p {
+    font-size: 1rem;
+  }
+}
+
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+.mission-text {
+  order: 1;
+}
+
+.mission-image {
+  order: 2;
 }
 
 /* Map Section */
@@ -1652,4 +2039,186 @@ textarea:focus,
 a:focus {
   outline: 2px solid var(--primary-color);
   outline-offset: 2px;
+}
+
+/* Plant a Tree Modal Enhancements */
+.modal-content {
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-body {
+  max-height: calc(90vh - 120px);
+  overflow-y: auto;
+}
+
+/* Form enhancements for plant modals */
+.form-row .form-group {
+  flex: 1;
+}
+
+/* Textarea styling */
+textarea {
+  resize: vertical;
+  min-height: 80px;
+  font-family: inherit;
+}
+
+/* Date input styling */
+input[type="date"] {
+  cursor: pointer;
+}
+
+/* Number input styling */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Modal animation improvements */
+.modal.active .modal-content {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.9) translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+/* Enhanced Event Cards */
+.event-card {
+  position: relative;
+  overflow: hidden;
+  border: 2px solid transparent;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(34, 139, 34, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.event-card:hover::before {
+  left: 100%;
+}
+
+.event-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 30px rgba(34, 139, 34, 0.2);
+  transform: translateY(-8px);
+}
+
+.event-card .btn {
+  width: 100%;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.event-content {
+  position: relative;
+  z-index: 1;
+}
+
+.event-date {
+  background: var(--gradient-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.event-date::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: rotate(45deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* Event Registration Modal Enhancements */
+.event-info-banner {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-left: 4px solid var(--primary-color);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.event-info-banner strong {
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.checkbox-group {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: start;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.checkbox-label input[type="checkbox"] {
+  width: auto;
+  margin-top: 0.25rem;
+  cursor: pointer;
+}
+
+.checkbox-label span {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Dark mode for event enhancements */
+[data-theme="dark"] .event-info-banner {
+  background: linear-gradient(135deg, #1e3a1e, #2d4a2d);
+  border-left-color: var(--primary-light);
+}
+
+[data-theme="dark"] .event-card {
+  border-color: rgba(76, 175, 80, 0.2);
+}
+
+[data-theme="dark"] .event-card:hover {
+  border-color: var(--primary-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .event-card .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1rem;
+  }
 }
