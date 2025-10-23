@@ -1,3 +1,4 @@
+
 // GreenRoots Enhanced JavaScript with Super Animations and Interactive Tree Map
 // =====================================================================
 
@@ -716,11 +717,39 @@ function initializeEventListeners() {
     if (pledgeForm) {
         pledgeForm.addEventListener('submit', handlePledgeSubmission);
     }
-    
+    // Event registration form submission
+const eventRegistrationForm = document.getElementById('eventRegistrationForm');
+if (eventRegistrationForm) {
+  eventRegistrationForm.addEventListener('submit', handleEventRegistration);
+}
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactSubmission);
+    }
+    
+    // Individual planting form submission
+    const individualPlantForm = document.getElementById('individualPlantForm');
+    if (individualPlantForm) {
+        individualPlantForm.addEventListener('submit', handleIndividualPlanting);
+    }
+    
+    // Community drive form submission
+    const communityDriveForm = document.getElementById('communityDriveForm');
+    if (communityDriveForm) {
+        communityDriveForm.addEventListener('submit', handleCommunityDrive);
+        
+        // Add dynamic field visibility based on action selection
+        const communityAction = document.getElementById('communityAction');
+        if (communityAction) {
+            communityAction.addEventListener('change', handleCommunityActionChange);
+        }
+    }
+    
+    // Corporate partnership form submission
+    const corporatePartnershipForm = document.getElementById('corporatePartnershipForm');
+    if (corporatePartnershipForm) {
+        corporatePartnershipForm.addEventListener('submit', handleCorporatePartnership);
     }
     
     // Floating Action Button
@@ -769,7 +798,6 @@ function initializeEventListeners() {
         }
     });
 }
-
 function handleAddTree(e) {
     e.preventDefault();
     
@@ -854,7 +882,135 @@ function handleContactSubmission(e) {
         hideLoadingState(e.target);
     }, 1500);
 }
+// =====================================================================
+// PLANT A TREE FORM HANDLERS
+// =====================================================================
 
+function handleIndividualPlanting(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('individualName').value,
+        phone: document.getElementById('individualPhone').value,
+        species: document.getElementById('individualSpecies').value,
+        location: document.getElementById('individualLocation').value,
+        specificLocation: document.getElementById('individualSpecificLocation').value,
+        date: document.getElementById('individualDate').value,
+        notes: document.getElementById('individualNotes').value
+    };
+    
+    // Validate required fields
+    if (!formData.name || !formData.phone || !formData.species || !formData.location || !formData.date) {
+        showNotification('⚠️ Please fill all required fields', 'warning');
+        return;
+    }
+    
+    showLoadingState(e.target);
+    
+    setTimeout(() => {
+        console.log('Individual Planting Request:', formData);
+        showNotification(`🌱 Thank you ${formData.name}! Your tree planting request has been submitted. We'll contact you soon to confirm the details.`, 'success');
+        e.target.reset();
+        hideLoadingState(e.target);
+        closeModal('individualPlantModal');
+        triggerCelebration();
+    }, 2000);
+}
+
+function handleCommunityActionChange(e) {
+    const action = e.target.value;
+    const groupSizeGroup = document.getElementById('communityGroupSizeGroup');
+    const dateGroup = document.getElementById('communityDateGroup');
+    
+    if (action === 'organize') {
+        groupSizeGroup.style.display = 'block';
+        dateGroup.style.display = 'block';
+        document.getElementById('communityGroupSize').required = true;
+        document.getElementById('communityDate').required = true;
+    } else {
+        groupSizeGroup.style.display = 'none';
+        dateGroup.style.display = 'none';
+        document.getElementById('communityGroupSize').required = false;
+        document.getElementById('communityDate').required = false;
+    }
+}
+
+function handleCommunityDrive(e) {
+    e.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('communityName').value,
+        email: document.getElementById('communityEmail').value,
+        phone: document.getElementById('communityPhone').value,
+        organization: document.getElementById('communityOrg').value,
+        action: document.getElementById('communityAction').value,
+        location: document.getElementById('communityLocation').value,
+        groupSize: document.getElementById('communityGroupSize').value,
+        date: document.getElementById('communityDate').value,
+        message: document.getElementById('communityMessage').value
+    };
+    
+    // Validate required fields
+    if (!formData.name || !formData.email || !formData.phone || !formData.action || !formData.location) {
+        showNotification('⚠️ Please fill all required fields', 'warning');
+        return;
+    }
+    
+    showLoadingState(e.target);
+    
+    setTimeout(() => {
+        console.log('Community Drive Request:', formData);
+        
+        const actionText = formData.action === 'join' ? 'joining' : 'organizing';
+        showNotification(`🤝 Thank you ${formData.name}! Your request for ${actionText} a community drive has been received. We'll be in touch shortly!`, 'success');
+        
+        e.target.reset();
+        hideLoadingState(e.target);
+        closeModal('communityDriveModal');
+        triggerCelebration();
+    }, 2000);
+}
+
+function handleCorporatePartnership(e) {
+    e.preventDefault();
+    
+    const formData = {
+        companyName: document.getElementById('corporateName').value,
+        contactPerson: document.getElementById('corporateContact').value,
+        email: document.getElementById('corporateEmail').value,
+        phone: document.getElementById('corporatePhone').value,
+        companySize: document.getElementById('corporateSize').value,
+        interest: document.getElementById('corporateInterest').value,
+        treeCount: document.getElementById('corporateTreeCount').value,
+        timeline: document.getElementById('corporateTimeline').value,
+        details: document.getElementById('corporateDetails').value
+    };
+    
+    // Validate required fields
+    if (!formData.companyName || !formData.contactPerson || !formData.email || !formData.phone || 
+        !formData.companySize || !formData.interest || !formData.treeCount || !formData.timeline) {
+        showNotification('⚠️ Please fill all required fields', 'warning');
+        return;
+    }
+    
+    // Validate minimum tree count
+    if (parseInt(formData.treeCount) < 50) {
+        showNotification('⚠️ Minimum tree count for corporate partnerships is 50 trees', 'warning');
+        return;
+    }
+    
+    showLoadingState(e.target);
+    
+    setTimeout(() => {
+        console.log('Corporate Partnership Request:', formData);
+        showNotification(`🏢 Thank you for your interest, ${formData.companyName}! Our partnership team will contact ${formData.contactPerson} within 24-48 hours to discuss your ${formData.treeCount}-tree initiative.`, 'success');
+        
+        e.target.reset();
+        hideLoadingState(e.target);
+        closeModal('corporatePartnershipModal');
+        triggerCelebration();
+    }, 2000);
+}
 // =====================================================================
 // NOTIFICATION SYSTEM
 // =====================================================================
@@ -1504,5 +1660,93 @@ window.GreenRoots = {
     showNotification,
     triggerCelebration
 };
+
+// =====================================================================
+// EVENT REGISTRATION FUNCTIONALITY
+// =====================================================================
+
+const eventDetails = {
+  'mumbai-monsoon': {
+    title: 'Mumbai Monsoon Plantation',
+    date: '15th November 2024',
+    location: 'Sanjay Gandhi National Park',
+    time: '7:00 AM - 12:00 PM'
+  },
+  'corporate-green': {
+    title: 'Corporate Green Initiative',
+    date: '22nd November 2024',
+    location: 'BKC Business District',
+    time: '8:00 AM - 1:00 PM'
+  }
+};
+
+function openEventRegistration(eventId) {
+  const event = eventDetails[eventId];
+  if (!event) return;
+  
+  // Set event details
+  document.getElementById('eventTitle').textContent = event.title;
+  document.getElementById('eventId').value = eventId;
+  
+  // Create info banner
+  const banner = document.getElementById('eventInfoBanner');
+  banner.innerHTML = `
+    <strong>${event.title}</strong>
+    <div style="margin-top: 0.5rem; display: grid; gap: 0.25rem;">
+      <span><i class="fas fa-calendar"></i> ${event.date}</span>
+      <span><i class="fas fa-map-marker-alt"></i> ${event.location}</span>
+      <span><i class="fas fa-clock"></i> ${event.time}</span>
+    </div>
+  `;
+  
+  openModal('eventRegistrationModal');
+}
+
+// Add event registration form handler to initialization
+const eventRegistrationForm = document.getElementById('eventRegistrationForm');
+if (eventRegistrationForm) {
+  eventRegistrationForm.addEventListener('submit', handleEventRegistration);
+}
+
+function handleEventRegistration(e) {
+  e.preventDefault();
+  
+  const formData = {
+    eventId: document.getElementById('eventId').value,
+    name: document.getElementById('eventName').value,
+    email: document.getElementById('eventEmail').value,
+    phone: document.getElementById('eventPhone').value,
+    age: document.getElementById('eventAge').value,
+    participants: document.getElementById('eventParticipants').value,
+    tshirt: document.getElementById('eventTshirt').value,
+    source: document.getElementById('eventSource').value,
+    message: document.getElementById('eventMessage').value,
+    termsAccepted: document.getElementById('eventTerms').checked
+  };
+  
+  const event = eventDetails[formData.eventId];
+  
+  if (!formData.termsAccepted) {
+    showNotification('⚠️ Please accept the terms and conditions', 'warning');
+    return;
+  }
+  
+  showLoadingState(e.target);
+  
+  setTimeout(() => {
+    console.log('Event Registration:', formData);
+    showNotification(
+      `🎉 Success! ${formData.name}, you're registered for ${event.title}! Check your email for confirmation and event details.`,
+      'success'
+    );
+    
+    e.target.reset();
+    hideLoadingState(e.target);
+    closeModal('eventRegistrationModal');
+    triggerCelebration();
+  }, 2000);
+}
+
+// Update the existing initializeEventListeners function to include this
 
 console.log('🌱 GreenRoots Enhanced JavaScript Loaded Successfully!');
